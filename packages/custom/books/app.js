@@ -23,7 +23,17 @@ Books.register(function(app, auth, database) {
     roles: ['authenticated'],
     menu: 'main'
   });
-  
+  //We are adding a link to the main menu for all authenticated users
+  Books.menus.add({
+    'roles': ['authenticated'],
+    'title': 'Books',
+    'link': 'all books'
+  });
+  Books.menus.add({
+    'roles': ['authenticated'],
+    'title': 'Create New Book',
+    'link': 'create book'
+  });
   Books.aggregateAsset('css', 'books.css');
 
   /**
