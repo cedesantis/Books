@@ -1,0 +1,14 @@
+<section data-ng-controller="BooksController" data-ng-init="findOne()">
+  <span>{{Book.created | date:'medium'}}</span> /
+  <span>{{Book.user.name}}</span>
+  <h2>{{Book.title}}</h2>
+  <div data-ng-if="hasAuthorization(Book)">
+    <a class="btn" href="/#!/Books/{{Book._id}}/edit">
+      <i class="glyphicon glyphicon-edit"></i>
+    </a>
+    <a class="btn" data-ng-click="remove(Book);">
+      <i class="glyphicon glyphicon-trash"></i>
+    </a>
+  </div>
+  <div>{{Book.content}}</div>
+</section>

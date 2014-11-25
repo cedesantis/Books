@@ -1,0 +1,21 @@
+<section data-ng-controller="BooksController" data-ng-init="find()">
+  <ul class="Books unstyled">
+    <li data-ng-repeat="Book in Books">
+      <span>{{Book.created | date:'medium'}}</span> /
+      <span>{{Book.user.name}}</span>
+      <h2>
+        <a data-ng-href="#!/Books/{{Book._id}}">{{Book.title}}</a>
+        <span data-ng-if="hasAuthorization(Book)">
+          <a class="btn" href="/#!/Books/{{Book._id}}/edit">
+            <i class="glyphicon glyphicon-edit"></i>
+          </a>
+          <a class="btn" data-ng-click="remove(Book);">
+            <i class="glyphicon glyphicon-trash"></i>
+          </a>
+        </span>
+      </h2>
+      <div>{{Book.content}}</div>
+    </li>
+  </ul>
+  <h1 data-ng-hide="!Books || Books.length">No Books yet. <br> Why don't you <a href="/#!/Books/create">Create One</a>?</h1>
+</section>
