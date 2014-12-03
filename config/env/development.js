@@ -2,7 +2,7 @@
 
 module.exports = {
   db: 'mongodb://localhost/mean-dev1',
-	debug: 'true',
+	debug: 'false',
   mongoose: {
     debug: false
   },

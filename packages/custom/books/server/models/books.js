@@ -20,6 +20,7 @@ var BookSchema = new Schema({
         required: true,
         trim: true
     },
+
     content: {
         type: String,
         required: true,

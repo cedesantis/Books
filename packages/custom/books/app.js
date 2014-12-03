@@ -18,13 +18,6 @@ Books.register(function(app, auth, database) {
 
   //We are adding a link to the main menu for all authenticated users
   Books.menus.add({
-    title: 'books example page',
-    link: 'books example page',
-    roles: ['authenticated'],
-    menu: 'main'
-  });
-  //We are adding a link to the main menu for all authenticated users
-  Books.menus.add({
     'roles': ['authenticated'],
     'title': 'Books',
     'link': 'all books'

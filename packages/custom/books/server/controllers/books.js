@@ -12,16 +12,16 @@ var mongoose = require('mongoose'),
  * Find book by id
  */
 exports.book = function(req, res, next, id) {
-    Book.load(id, function(err, article) {
+    Book.load(id, function(err, book) {
         if (err) return next(err);
-        if (!article) return next(new Error('Failed to load book ' + id));
-        req.article = article;
+        if (!book) return next(new Error('Failed to load book ' + id));
+        req.book = book;
         next();
     });
 };
 
 /**
- * Create an article
+ * Create an book
  */
 exports.create = function(req, res) {
     var book = new Book(req.body);
@@ -30,7 +30,7 @@ exports.create = function(req, res) {
     book.save(function(err) {
         if (err) {
             return res.json(500, {
-                error: 'Cannot save the article'
+                error: 'Cannot save the book'
             });
         }
         res.json(book);
@@ -39,7 +39,7 @@ exports.create = function(req, res) {
 };
 
 /**
- * Update an article
+ * Update an book
  */
 exports.update = function(req, res) {
     var book = req.book;
@@ -49,7 +49,7 @@ exports.update = function(req, res) {
     book.save(function(err) {
         if (err) {
             return res.json(500, {
-                error: 'Cannot update the article'
+                error: 'Cannot update the book'
             });
         }
         res.json(book);
@@ -58,7 +58,7 @@ exports.update = function(req, res) {
 };
 
 /**
- * Delete an article
+ * Delete an book
  */
 exports.destroy = function(req, res) {
     var book = req.book;
@@ -66,7 +66,7 @@ exports.destroy = function(req, res) {
     book.remove(function(err) {
         if (err) {
             return res.json(500, {
-                error: 'Cannot delete the article'
+                error: 'Cannot delete the book'
             });
         }
         res.json(book);

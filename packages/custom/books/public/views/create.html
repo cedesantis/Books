@@ -1,21 +1,21 @@
 <section data-ng-controller="BooksController">
-  <form name="BookForm" class="form-horizontal col-md-6" role="form" data-ng-submit="create(BookForm.$valid)" novalidate>
+  <form name="bookForm" class="form-horizontal col-md-6" role="form" data-ng-submit="create(bookForm.$valid)" novalidate>
     <div class="form-group" ng-class="{ 'has-error' : submitted && BookForm.title.$invalid }">
       <label mean-token="'create-title'" class="col-md-3 control-label">Title</label>
       <div class="col-md-9">
         <input name="title" type="text" class="form-control" data-ng-model="title" id="title" placeholder="Title" required>
-        <div ng-show="submitted && BookForm.title.$invalid" class="help-block">
-          <p ng-show="BookForm.title.$error.required">Title is required</p>
+        <div ng-show="submitted && bookForm.title.$invalid" class="help-block">
+          <p ng-show="bookForm.title.$error.required">Title is required</p>
         </div>
       </div>
 
     </div>
-    <div class="form-group" ng-class="{ 'has-error' : submitted && BookForm.content.$invalid }">
+    <div class="form-group" ng-class="{ 'has-error' : submitted && bookForm.content.$invalid }">
       <label mean-token="'create-content'" for="content" class="col-md-3 control-label">Content</label>
       <div class="col-md-9">
         <textarea name="content" data-ng-model="content" id="content" cols="30" rows="10" placeholder="Content" class="form-control" required></textarea>
-        <div ng-show="submitted && BookForm.content.$invalid" class="help-block">
-          <p ng-show="BookForm.content.$error.required">Content is required</p>
+        <div ng-show="submitted && bookForm.content.$invalid" class="help-block">
+          <p ng-show="bookForm.content.$error.required">Content is required</p>
         </div>
       </div>
     </div>
