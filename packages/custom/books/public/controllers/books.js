@@ -13,7 +13,8 @@ angular.module('mean.books').controller('BooksController', ['$scope', '$statePar
       if (isValid) {
         var book = new Books({
           title: this.title,
-          content: this.content
+          content: this.content,
+          isbn: this.isbn
         });
         book.$save(function(response) {
           $location.path('books/' + response._id);
@@ -21,6 +22,7 @@ angular.module('mean.books').controller('BooksController', ['$scope', '$statePar
 
         this.title = '';
         this.content = '';
+        this.isbn = '';
       } else {
         $scope.submitted = true;
       }

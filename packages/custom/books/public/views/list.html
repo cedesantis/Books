@@ -4,7 +4,7 @@
       <span>{{book.created | date:'medium'}}</span> /
       <span>{{book.user.name}}</span>
       <h2>
-        <a data-ng-href="#!/Books/{{book._id}}">{{book.title}}</a>
+        <a data-ng-href="#!/books/{{book._id}}">{{book.title}}</a>
         <span data-ng-if="hasAuthorization(book)">
           <a class="btn" href="/#!/books/{{book._id}}/edit">
             <i class="glyphicon glyphicon-edit"></i>

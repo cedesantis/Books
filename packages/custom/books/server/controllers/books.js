@@ -58,7 +58,7 @@ exports.update = function(req, res) {
 };
 
 /**
- * Delete an book
+ * Delete a book
  */
 exports.destroy = function(req, res) {
     var book = req.book;
@@ -75,14 +75,14 @@ exports.destroy = function(req, res) {
 };
 
 /**
- * Show an article
+ * Show a book
  */
 exports.show = function(req, res) {
     res.json(req.book);
 };
 
 /**
- * List of Articles
+ * List of Books
  */
 exports.all = function(req, res) {
     Book.find().sort('-created').populate('user', 'name username').exec(function(err, books) {

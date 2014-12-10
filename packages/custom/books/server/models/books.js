@@ -26,6 +26,11 @@ var BookSchema = new Schema({
         required: true,
         trim: true
     },
+    isbn: {
+        type: String,
+        required: true,
+        trim: true
+    },
     user: {
         type: Schema.ObjectId,
         ref: 'User'
@@ -42,6 +47,10 @@ BookSchema.path('title').validate(function(title) {
 BookSchema.path('content').validate(function(content) {
     return !!content;
 }, 'Content cannot be blank');
+
+BookSchema.path('isbn').validate(function(isbn) {
+    return !!isbn;
+}, 'ISBN cannot be blank');
 
 /**
  * Statics
